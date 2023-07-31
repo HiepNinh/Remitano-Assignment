@@ -1,0 +1,14 @@
+{
+  "token": {
+    "address": ""
+  },
+  "pool": {
+    "address": ""
+  },
+  "factory": {
+    "address": ""
+  },
+  "router": {
+    "address": ""
+  }
+}
