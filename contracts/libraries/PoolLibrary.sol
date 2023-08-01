@@ -26,7 +26,7 @@ library PoolLibrary {
                         hex'ff',
                         factory,
                         keccak256(abi.encodePacked(token0, token1)),
-                        hex''
+                        hex'27e7b0e28764cf876d9963a758d8dac0a80c66556c27a051e874be11a0446945'
                     ))
                 )
             ));
