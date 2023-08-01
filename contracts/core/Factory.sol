@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/utils/Context.sol";
 import './interfaces/IFactory.sol';
 import "./Pool.sol";
 
-contract UniswapV2Factory is IFactory, Context {
+contract Factory is IFactory, Context {
     mapping(address => mapping(address => address)) public getPool;
     address[] public allPools;
 

@@ -121,6 +121,7 @@ contract Pool is IPool, ERC20AllowedZeroAddress, ReentrancyGuard {
      */
      function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes calldata data) external nonReentrant {
         require(amount0Out > 0 || amount1Out > 0, 'POOL: INSUFFICIENT_OUTPUT_AMOUNT');
+        require(amount0Out == 0 || amount1Out == 0, 'POOL: Invalid Input Output');
         (uint112 _reserve0, uint112 _reserve1) = getReserves(); // gas savings
         require(amount0Out < _reserve0 && amount1Out < _reserve1, 'POOL: INSUFFICIENT_LIQUIDITY');
 
@@ -148,19 +149,21 @@ contract Pool is IPool, ERC20AllowedZeroAddress, ReentrancyGuard {
         { // avoids stack too deep errors
             (uint112 _initReserve0, uint112 _initReserve1) = getInitialReserves(); // gas savings
 
-            if(amount0In > 0) 
+            if(amount0In > 0) {
                 require(Math.mulDiv(
                     amount0In, 
                     uint256(_initReserve1), 
                     uint256(_initReserve0)
-                ) == uint256(amount1Out), "POOL: Invalid Input Output");
+                ) >= uint256(amount1Out), "POOL: Invalid Input Output");
+            }
 
-            if(amount1In > 0)
+            if(amount1In > 0) {
                 require(Math.mulDiv(
                     amount1In, 
-                    _initReserve0, 
-                    _initReserve1
-                ) == uint256(amount0Out), "POOL: Invalid Input Output");
+                    uint256(_initReserve0), 
+                    uint256(_initReserve1)
+                ) >= uint256(amount0Out), "POOL: Invalid Input Output");
+            }
         }
 
         _update(balance0, balance1);
