@@ -13,7 +13,7 @@ let factory: Factory;
 let tokenA: MockERC20;
 let tokenB: MockERC20;
 
-describe("UniswapV2Factory", function () {
+describe("Factory", function () {
   this.timeout(1000000);
 
   this.beforeEach(async () => {

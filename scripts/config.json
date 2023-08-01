@@ -6,9 +6,10 @@
     "address": ""
   },
   "factory": {
-    "address": ""
+    "address": "0xaE8076efF1cAB12880f3D72381A3e464a8546e2C"
   },
   "router": {
-    "address": ""
+    "weth": "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9",
+    "address": "0xA0f48E9B397455862E322E9149886BF5c92b07fd"
   }
 }
