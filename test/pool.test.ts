@@ -94,16 +94,6 @@ const swap = async (
 ///***********************          Helper Functions           ***********************/
 ///***********************************************************************************/
 
-/// ============== Approximate equally checking ==============
-const checkingApproximateEqually = (
-  firstNum: BigNumber,
-  secondNum: BigNumber
-) => {
-  return firstNum.gt(secondNum)
-    ? firstNum.div(secondNum).eq(1)
-    : secondNum.div(firstNum).eq(1);
-};
-
 /// ============== BigNumber SQRT ==============
 const sqrt = (value: BigNumber) => {
   const ONE = ethers.BigNumber.from(1);
