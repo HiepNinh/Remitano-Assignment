@@ -14,7 +14,7 @@ async function main() {
   console.log("Verify Pool Contract on Sepolia Testnet......");
 
   await hre.run("verify:verify", {
-    address: config.samplePair.address,
+    address: config.pool.address,
     contract: "contracts/core/Pool.sol:Pool",
     constructorArguments: [],
   });

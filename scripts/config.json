@@ -3,7 +3,8 @@
     "address": ""
   },
   "pool": {
-    "address": ""
+    "token": "0x7a647E5A56751DB55FC7C4D3408fA8f2f9209E0E",
+    "address": "0x120EC9f113a3ba7F5f1Bd750cC063B904A233f73"
   },
   "factory": {
     "address": "0xaE8076efF1cAB12880f3D72381A3e464a8546e2C"
